@@ -1,10 +1,25 @@
 package com.ostap.units;
 
-/**
- * Created by Spartacus on 24.02.2015.
- */
+
 public class Swim extends Base {
+    int torpedo;
     public Swim() {
-    super(15);
+        speed += 20;
+        damage += 15;
+        torpedo = 60;
+        hp += 20;
     }
+
+    // Setters
+
+    public void swim() {
+        print(speed);
+        print("This is an exclusive swimming method");
+    }
+
+    /*@Override
+    public int getSpeed() {
+        print("Must be 30");
+        return super.getSpeed();
+    }*/
 }

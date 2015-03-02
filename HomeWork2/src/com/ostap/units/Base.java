@@ -1,21 +1,57 @@
 package com.ostap.units;
 
-/**
- * Created by Spartacus on 24.02.2015.
- */
+
 public class Base {
-    int speed = 10;
-    public Base(int speed) {
-        setSpeed(speed);
-        getSpeed();
+    boolean alive = true;
+    int speed;
+    int hp;
+    int damage;
+
+    public Base() {
+        speed = 10;
+        hp = 250;
+        damage = 45;
     }
 
-    private void setSpeed(int speed) {
+
+    // Setters
+
+    void setSpeed(int speed) {
         this.speed = speed;
     }
 
-    int getSpeed() {
-        System.out.println(speed);
+    public int attack(Base args) {
+        args.hp = args.hp - this.damage;
+        getStatus();
+        return args.hp;
+    }
+
+    // Getters
+
+    public int getSpeed() {
         return speed;
     }
+
+    public boolean getStatus() {
+        if (hp <= 0) {
+            alive = false;
+        }
+        return alive;
+    }
+
+
+    // Output
+
+    public void print(int param) {
+        System.out.println(param);
+    }
+
+    public void print(boolean param) {
+        System.out.println(param);
+    }
+
+    public void print(String param) {
+        System.out.println(param);
+    }
+
 }
